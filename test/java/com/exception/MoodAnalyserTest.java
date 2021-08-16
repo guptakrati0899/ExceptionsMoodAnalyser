@@ -12,10 +12,10 @@ public class MoodAnalyserTest<ExpectedException> {
         MoodAnalyser moodAnalyser = new MoodAnalyser(null);
         try{
 
-            moodAnalyser.analyseMood(null);
+            moodAnalyser.analyseMood(" ");
         } catch (MoodAnalysisException e) {
 
-                Assertions.assertEquals("PLease enter proper message" , e.getMessage());
+                Assertions.assertEquals(MoodAnalysisException.ExceptionType.ENTERED_EMPTY, e.getMessage());
         }
         }
 
